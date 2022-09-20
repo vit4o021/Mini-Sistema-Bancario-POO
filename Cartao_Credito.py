@@ -21,11 +21,11 @@ class CartaoCredito:
         self.conta_corrente = conta_corrente
         conta_corrente.cartoes.append(self)
 
-    @property #Torna o método um atributo (Get)  -> Nesse caso, queremos tratar a como quero restringir a forma como a pessoa pode modificar o valor da senha
+    @property
     def senha(self):
         return self._senha
 
-    @senha.setter #Recebe um valor e trata ele (Set)
+    @senha.setter
     def senha(self, valor):
         if len(valor) == 4 and valor.isnumeric():
             self._senha = valor

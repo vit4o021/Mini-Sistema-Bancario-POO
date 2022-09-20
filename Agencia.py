@@ -31,7 +31,7 @@ class AgenciaVirtual(Agencia):
 
     def __init__(self, site, telefone, cnpj):
         self.site = site
-        super().__init__(telefone, cnpj, 1000) #Puxa o método init da classe "mãe", caso contrário, o método init da subclasse, substitui o da classe "mãe"
+        super().__init__(telefone, cnpj, 1000)
         self.caixa = 1000000
         self.caixa_paypal = 0
 
@@ -60,12 +60,12 @@ class AgenciaPremium(Agencia):
         self.caixa = 10000000
 
 
-    def adicionar_cliente(self, nome, cpf, patrimonio): #Muda a forma de como esse método já existente na classe "mãe" funcionará nessa subclasse
-        if patrimonio > 1000000: #Substitui o método adicionar_cliente da classe "mãe" para funcionar da forma que a subclasse AgenciaPremium precisa.
-            super().adicionar_cliente(nome, cpf, patrimonio) #Usa o método adicionar_cliente que está na classe "mãe" (mesma coisa do init)
+    def adicionar_cliente(self, nome, cpf, patrimonio):
+        if patrimonio > 1000000:
+            super().adicionar_cliente(nome, cpf, patrimonio)
         else:
             print('O cliente não possui patrimônio suficiente para entrar na agência.')
 
 
 
-#if __name__ == '__main__': ---> Tudo que for colocado dentro do if, não vai ser executado numa importação.
+
